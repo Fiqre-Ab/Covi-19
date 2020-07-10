@@ -1,0 +1,247 @@
+<!-- CODE EXPLAINED TUTORIALS -->
+<!-- youtube.com/CodeExplained -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/style.css">
+
+    <title>COVID-19 STATS - JAVASCRIPT</title>
+    <style>
+      <style>
+      *
+      {
+          margin: 0;
+          padding: 0;
+      }
+      .top-nav-bar
+      {
+         height: 57px;
+          top: 0;
+          position: sticky;
+          background: #fff;
+          margin-bottom: 20px;
+          border-bottom: 3px solid #F28DA8 ;
+          z-index: 2;
+      }
+      .logo
+      {
+          height: 40px;
+          margin: 5px 10px;
+      	width: 100px;
+      }
+      .form-control
+      {
+          margin-top: 9px;
+          margin-left: 30px;
+          border: 1px solid #F28DA8 ;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px ;
+          border-top-right-radius: 0 ;
+          border-bottom-right-radius: 0 ;
+          box-shadow: none ;
+
+      }
+
+      .menu-bar
+      {
+          width: 40%;
+          height: 57px;
+          float: right;
+          top:0p;
+
+      }
+      .menu-bar ul
+      {
+          display: inline-flex;
+          float: right;
+      }
+      .menu-bar ul li
+      {
+          border-left: 1px solid #fff;
+          list-style-type: none;
+          padding: 15px 35px;
+          text-align: center;
+          background-color: #F28DA8;
+          cursor: pointer;
+      }
+      .menu-bar ul li a
+      {
+          font-size: 16px;
+          font-weight: bold;
+          color: #fff;
+          text-decoration: none;
+      }
+
+      @media only screen and (max-width: 980px)
+      {
+          .top-nav-bar
+          {
+              height: 118px;
+              border-bottom: 0;
+          }
+          .search-box
+          {
+
+              width: 100%;
+          }
+          .menu-bar
+          {
+
+              width: 100%;
+          }
+          .menu-bar ul
+          {
+              margin: 10px 0;
+              width: 100%;
+          }
+          .menu-bar ul li
+          {
+              height: 57px;
+              width: 100%;
+          }
+      }
+
+
+      </style>
+</head>
+<body>
+  <div class="top-nav-bar">
+  <div class="">
+  <a href="../../index.php.html"><img src="../../images/logo.jpeg" class="logo"></a>
+
+  </div>
+
+  <div class="menu-bar">
+  <ul>
+
+   <li><a href="../../index.php.html"target="_blank">Bsrat Ltd</a></li>
+    <li><a href="../About us/AboutUs.php.html" target="_blank">About us</a></li>
+
+  </ul>
+  </div>
+  <ul>
+
+  </ul>
+  </div>
+  </div>
+    <header>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="logo">
+            <img src="./resources/img/logo.png" alt="">
+            <p>COVID-19<br/>STATS</p>
+        </div>
+        <nav>
+            <ul>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="stats">
+            <div class="latest-report">
+                <div class="country">
+                    <div class="name">Loading...</div>
+                    <div class="change-country">change</div>
+                    <div class="search-country hide">
+                        <div class="search-box">
+                            <input type="text" id="search-input" placeholder="Search Country...">
+                            <img class="close" src="./resources/img/close.svg" alt="">
+                        </div>
+                        <div class="country-list">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="total-cases">
+                    <div class="title">Total Cases</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div>
+                <div class="recovered">
+                    <div class="title">Recovered</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div>
+                <div class="deaths">
+                    <div class="title">Deaths</div>
+                    <div class="value">0</div>
+                    <div class="new-value">+0</div>
+                </div>
+            </div>
+            <div class="chart">
+                <canvas id="axes_line_chart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <video id="my-video" class="video" muted loop>
+      <source src="demo.mp4" type="video/mp4" height="100%" width="100vh">
+      <source src="demo.mp4" type="video/mp4" height="100%" width="100vh">
+      <source src="demo.mp4" type="video/mp4" height="100%" width="100vh">
+    </video><!-- /video -->
+    <div class="color"></div>
+    <script>
+    (function() {
+      /**
+       * Video element
+       * @type {HTMLElement}
+       */
+      var video = document.getElementById("my-video");
+      /**
+       * Check if video can play, and play it
+       */
+      video.addEventListener( "canplay", function() {
+        video.play();
+      });
+    })();
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <div class="copyright">
+                <p>Copyright © 2020 Code Explained</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <script src="resources/js/countries.js"></script>
+    <script src="resources/js/app.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+        function openmenu()
+          {
+              document.getElementById("side-menu").style.display="block";
+              document.getElementById("menu-btn").style.display="none";
+              document.getElementById("close-btn").style.display="block";
+          }
+          function closemenu()
+          {
+              document.getElementById("side-menu").style.display="none";
+              document.getElementById("menu-btn").style.display="block";
+              document.getElementById("close-btn").style.display="none";
+          }
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
